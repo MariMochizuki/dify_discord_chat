@@ -13,10 +13,10 @@ intents = discord.Intents.default()
 intents.messages = True
 intents.message_content = True
 
-client = commands.Bot(command_prefix='!', intents=intents)
+client = discord.Client(intents=intents)
 
 async def get_chat_response(query):
-    url = 'https://api.dify.ai/v1/workflows/run'
+    url = 'https://dify.codeland.jp/v1/workflows/run'
     headers = {
         'Authorization': f'Bearer {DIFY_KEY}',
         'Content-Type': 'application/json'
